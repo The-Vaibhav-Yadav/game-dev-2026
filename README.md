@@ -2,6 +2,11 @@
 
 A roguelike dungeon crawler where **you start with nothing** — no graphics, no sound, no combat. Every game feature must be purchased from the in-game shop using gold earned from dungeon runs. Die, earn gold, buy upgrades, repeat.
 
+## Request to Judges
+We request the judges to play the game at each and every level , upgrade to every level from starting to end and also 
+at last see the audio in in each phase of bankrupt , victory , collecting coins , initial shoppingphase and playing state.
+We hope the that our hardwork will be loved by the judges.
+
 ## Prerequisites
 
 - **Python 3.10+**
@@ -47,7 +52,7 @@ uv run python main.py   # run the game
 
 1. **Title Screen** → Press any key
 2. **Shop** → Browse upgrades, click **START RUN** (or press Enter)
-3. **Dungeon** → Collect coins, find the key, reach the door
+3. **Dungeon** → Collect coins, collect the key, reach the door
 4. **BANKRUPT** → Your gold drains constantly. Hit 0 and you die.
 5. **Back to Shop** → Gold earned carries over. Buy upgrades. Try again.
 
@@ -102,33 +107,51 @@ Set `DEBUG = False` in `states/playing_state.py` to disable.
 
 ## Adding Custom Assets (Optional)
 
-The game works fully with colored rectangles. To add sprites and audio, drop files into `assets/` with these exact names:
+The game works fully with animated characters and backgrounds. To add sprites and audio, you need to upgrade to that level.
 
 ### Sprites (64×64 PNG)
 
 ```
-assets/sprites/player/   → player_up.png, player_down.png, player_left.png, player_right.png
-assets/sprites/tiles/    → floor_1.png, wall.png
-assets/sprites/objects/  → coin_1.png, key.png, door_locked.png, door_open.png
-assets/sprites/enemies/  → slime_1.png, bat_1.png, turret_1.png
+assets/sprites/player/   → player_up.png, player_down.png, player_left.png, player_right.png ,player_attack_up.png, player_attack_down.png,
+                           player_attack_left.png, player_attack_right.png
+assets/sprites/pickups/    → key.png
+assets/sprites/fire_png.png/  
+assets/sprites/enemies/  → slime_1.png, bat_1.png, turret_1.png , enemies_sprite.png
 assets/sprites/traps/    → spike_up.png, spike_down.png, tax_zone_1.png
+                         ├── tiles
+                                    →floor_1.png , wall.png
+
 ```
 
 ### Audio
 
 ```
-assets/audio/sfx/   → coin.wav, hit.wav, attack.wav, enemy_death.wav, key.wav,
-                      door_open.wav, spike_trap.wav, turret_fire.wav,
-                      player_death.wav, purchase.wav
-assets/audio/music/ → bgm_dungeon.ogg, bgm_shop.ogg
+assets/audio/music/   → shop_music.mp3 
+debt_dungeon/dd_cursor
+├── buy.mpeg
+├── click.mpeg
+├── click2.mpeg
+├── coin2.mp3
+├── click2.mp3
+├── counting_stars.mpeg
+├── faah.mpeg
+├── fien.mp3
+├── fien2.mp3
+├── keys.mpeg
+├── keys2.mp3
+├── slash.mpeg
+├── sunflower.mpeg
+├── this_is_the_end.mpeg
+├── victory.mpeg
+ 
 ```
 
-Filenames are the API — `coin.wav` maps to `audio.play_sfx("coin")` automatically.
+
 
 ## Project Structure
 
 ```
-debt_dungeon/
+debt_dungeon/dd_cursor(Excluding the )
 ├── main.py              # Entry point — game loop
 ├── constants.py         # All magic numbers and paths
 ├── game_state.py        # Persistent state (gold, upgrades)
