@@ -28,6 +28,7 @@ class AssetManager:
                         self.sprites[key] = img
                     except pygame.error:
                         print(f"WARNING: Could not load sprite: {path}")
+        print("LOADED SPRITE KEYS:", sorted(self.sprites.keys()))  # ADD THIS LINE
 
     def get_sprite(self, key):
         """Returns the Surface or None."""
